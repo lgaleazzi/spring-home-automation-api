@@ -20,7 +20,7 @@ public class Device extends BaseEntity
 
     public Device(String name, Room room)
     {
-        super();
+        this();
         this.name = name;
         this.room = room;
     }

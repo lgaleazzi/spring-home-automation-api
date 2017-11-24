@@ -18,6 +18,7 @@ public class Room extends BaseEntity
 
     protected Room() {
         super();
+        this.devices = new ArrayList<>();
     }
 
     public Room(String name, int area)
@@ -25,7 +26,6 @@ public class Room extends BaseEntity
         this();
         this.name = name;
         this.area = area;
-        this.devices = new ArrayList<>();
     }
 
     public String getName()
