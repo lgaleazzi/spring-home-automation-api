@@ -1,14 +1,20 @@
 package com.homeapi.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.homeapi.core.BaseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.Entity;
 
 @Entity
 public class User extends BaseEntity
 {
+    public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
     private String name;
+    @JsonIgnore
     private String[] roles;
+    @JsonIgnore
     private String password;
 
     protected User()
@@ -21,7 +27,7 @@ public class User extends BaseEntity
         this();
         this.name = name;
         this.roles = roles;
-        this.password = password;
+        setPassword(password);
     }
 
     public String getName()
@@ -51,6 +57,6 @@ public class User extends BaseEntity
 
     public void setPassword(String password)
     {
-        this.password = password;
+        this.password = PASSWORD_ENCODER.encode(password);
     }
 }
