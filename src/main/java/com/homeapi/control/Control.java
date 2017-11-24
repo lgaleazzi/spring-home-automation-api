@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Version;
-import java.time.LocalDateTime;
 
 @Entity
 public class Control extends BaseEntity
