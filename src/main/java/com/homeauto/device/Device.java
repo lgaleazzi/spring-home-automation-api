@@ -1,22 +1,19 @@
 package com.homeauto.device;
 
+import com.homeauto.com.homeauto.core.BaseEntity;
 import com.homeauto.room.Room;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Entity;
 
-public class Device
+@Entity
+public class Device extends BaseEntity
 {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private final Long id;
     private String name;
     private Room room;
 
     protected Device()
     {
-        this.id = null;
+        super();
     }
 
     public String getName()
