@@ -27,8 +27,7 @@ public class DataLoader implements ApplicationRunner
     {
         Device tv = new Device("TV");
         Room livingRoom = new Room("Living Room", 30);
-        tv.setRoom(livingRoom);
-        livingRoom.getDevices().add(tv);
+        livingRoom.addDevice(tv);
 
         roomRepository.save(livingRoom);
         deviceRepository.save(tv);

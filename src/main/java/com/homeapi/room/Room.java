@@ -53,8 +53,9 @@ public class Room extends BaseEntity
         return devices;
     }
 
-    public void setDevices(List<Device> devices)
+    public void addDevice(Device device)
     {
-        this.devices = devices;
+        device.setRoom(this);
+        this.devices.add(device);
     }
 }
