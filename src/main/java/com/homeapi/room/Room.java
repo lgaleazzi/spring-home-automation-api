@@ -7,6 +7,8 @@ import com.homeapi.user.User;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +16,7 @@ import java.util.List;
 public class Room extends BaseEntity
 {
     private String name;
+    @Max(1000)
     private int area;
     @OneToMany(mappedBy = "room")
     private List<Device> devices;
