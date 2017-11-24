@@ -1,7 +1,7 @@
 package com.homeapi.device;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface DeviceRepository extends CrudRepository<Device, Long>
+public interface DeviceRepository extends PagingAndSortingRepository<Device, Long>
 {
 }
