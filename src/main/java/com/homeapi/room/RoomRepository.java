@@ -1,4 +1,4 @@
-package com.homeauto.room;
+package com.homeapi.room;
 
 
 import org.springframework.data.repository.CrudRepository;

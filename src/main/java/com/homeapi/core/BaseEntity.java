@@ -1,4 +1,4 @@
-package com.homeauto.com.homeauto.core;
+package com.homeapi.core;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

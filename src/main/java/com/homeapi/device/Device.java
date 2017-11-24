@@ -1,19 +1,33 @@
-package com.homeauto.device;
+package com.homeapi.device;
 
-import com.homeauto.com.homeauto.core.BaseEntity;
-import com.homeauto.room.Room;
+import com.homeapi.core.BaseEntity;
+import com.homeapi.room.Room;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Device extends BaseEntity
 {
     private String name;
+    @ManyToOne
     private Room room;
 
     protected Device()
     {
         super();
+    }
+
+    public Device(String name, Room room)
+    {
+        super();
+        this.name = name;
+        this.room = room;
+    }
+
+    public Device(String name)
+    {
+        this(name, null);
     }
 
     public String getName()

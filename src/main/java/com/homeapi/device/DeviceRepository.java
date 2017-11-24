@@ -1,4 +1,4 @@
-package com.homeauto.device;
+package com.homeapi.device;
 
 import org.springframework.data.repository.CrudRepository;
 
