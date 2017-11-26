@@ -76,4 +76,17 @@ public class Room extends BaseEntity
     {
         this.administrators.add(user);
     }
+
+    public boolean hasAdministrator(String name)
+    {
+        boolean hasAdministrator = false;
+        for (User user : administrators)
+        {
+            if (user.getName().equalsIgnoreCase(name))
+            {
+                hasAdministrator = true;
+            }
+        }
+        return hasAdministrator;
+    }
 }

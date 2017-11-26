@@ -49,7 +49,7 @@ public class DataLoader implements ApplicationRunner
         livingRoom.addAdministrator(users.get(0));
         livingRoom.addDevice(tv);
 
-        roomRepository.save(livingRoom);
-        deviceRepository.save(tv);
+//        roomRepository.save(livingRoom);
+//        deviceRepository.save(tv);
     }
 }
