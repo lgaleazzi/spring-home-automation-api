@@ -3,13 +3,13 @@ package com.homeapi.control;
 import com.homeapi.core.BaseEntity;
 import com.homeapi.device.Device;
 import com.homeapi.user.User;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Version;
+import javax.persistence.*;
 
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class Control extends BaseEntity
 {
     private String name;
@@ -17,6 +17,7 @@ public class Control extends BaseEntity
     @OneToOne
     private Device device;
     @ManyToOne
+    @LastModifiedBy
     private User lastModifiedBy;
     @Version
     private Long version;
