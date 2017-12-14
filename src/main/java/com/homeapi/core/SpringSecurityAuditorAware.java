@@ -1,19 +1,16 @@
 package com.homeapi.core;
 
 import com.homeapi.user.User;
-import com.homeapi.user.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.homeapi.user.UserAwareUserDetails;
 import org.springframework.data.domain.AuditorAware;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 //@Component
 public class SpringSecurityAuditorAware implements AuditorAware<User>
 {
-    @Autowired
-    private UserService userService;
-
     @Override
     public User getCurrentAuditor()
     {
-        return userService.getAuthenticatedUser();
+        return ((UserAwareUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUser();
     }
 }

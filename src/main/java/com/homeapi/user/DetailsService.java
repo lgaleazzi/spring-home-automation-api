@@ -21,12 +21,11 @@ public class DetailsService implements UserDetailsService
         {
             throw new UsernameNotFoundException(username + " was not found");
         }
-        return new org.springframework.security.core.userdetails.User(
-                user.getName(),
-                user.getPassword(),
-                AuthorityUtils.createAuthorityList(user.getRoles())
-        );
+
+        return new UserAwareUserDetails(user, AuthorityUtils.createAuthorityList(user.getRoles()));
     }
+
+
 
 
 }
